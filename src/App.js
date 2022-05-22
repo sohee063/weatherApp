@@ -57,11 +57,20 @@ function App() {
       {loading ? (
         <div className="container">
           <ClipLoader color="#f88c6b" loading={loading} size={150} />
+          <WeatherButton
+            className="clicked"
+            cities={cities}
+            setCity={setCity}
+          />
         </div>
       ) : (
         <div className="container">
           <WeatherBox weather={weather} />
-          <WeatherButton cities={cities} setCity={setCity} />
+          <WeatherButton
+            className="clicked"
+            cities={cities}
+            setCity={setCity}
+          />
         </div>
       )}
     </div>

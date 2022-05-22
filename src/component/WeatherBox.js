@@ -1,8 +1,6 @@
 import React from "react";
 
 const WeatherBox = ({ weather }) => {
-  let tempC = Math.ceil(weather.main.temp) / 100;
-  console.log("weahter??", tempC);
   const temperatureC =
     weather && weather.main ? weather.main.temp.toFixed(2) : "";
   const temperatureF =
@@ -11,7 +9,7 @@ const WeatherBox = ({ weather }) => {
   return (
     <div className="weather-box">
       <div>{weather?.name}</div>
-      <h2>{`${temperatureC}℃/ ${temperatureF}℉`}</h2>
+      <h2>{`${temperatureC}℃ / ${temperatureF}℉`}</h2>
       <h3>{weather?.weather[0].description}</h3>
     </div>
   );
