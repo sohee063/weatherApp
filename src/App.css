@@ -1,0 +1,40 @@
+body {
+  background: url(https://www.teahub.io/photos/full/96-964582_material-design-wallpapers-desktop-material-design-background-weather.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid whitesmoke;
+  padding: 50px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.weather-box {
+  margin: 5px;
+}
+
+.weather-box > h1,
+h2,
+div {
+  margin: 5px;
+}
+
+.button-area > button {
+  margin: 5px;
+  margin-top: 20px;
+}
