@@ -14,7 +14,7 @@ const cities = ["hanoi", "paris", "new york", "seoul"];
 // 6. 데이터를 들고오는 동안 로딩스피너가 돈다.
 function App() {
   const [weather, setWeather] = useState(null);
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Pazarcık");
   const [loading, setLoading] = useState(false);
 
   const getCurrentLocation = () => {
@@ -42,25 +42,37 @@ function App() {
     let data = await response.json();
     setWeather(data);
     setLoading(false);
+    console.log(data);
   };
 
   useEffect(() => {
-    if (city === "") {
-      getCurrentLocation();
-    } else {
-      getWeatherByCity();
-    }
+    // if (city === "Pazarcık") {
+    //   getCurrentLocation();
+    // } else {
+    setLoading(true);
+    getWeatherByCity();
+    // }
   }, [city]);
+
+  const handleCityChange = (city) => {
+    if (city === "Pazarcık") {
+      setCity("Pazarcık");
+    } else {
+      setCity(city);
+    }
+    console.log("시티", city);
+  };
 
   return (
     <div>
       {loading ? (
         <div className="container">
           <ClipLoader color="#f88c6b" loading={loading} size={150} />
+
           <WeatherButton
             className="clicked"
             cities={cities}
-            setCity={setCity}
+            handleCityChange={handleCityChange}
           />
         </div>
       ) : (
@@ -69,7 +81,7 @@ function App() {
           <WeatherButton
             className="clicked"
             cities={cities}
-            setCity={setCity}
+            handleCityChange={handleCityChange}
           />
         </div>
       )}
